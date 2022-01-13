@@ -1,0 +1,39 @@
+@use '../../assets/styles/vars';
+
+.glitch-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: vars.$black-primary;
+    z-index: 9999;
+}
+
+.glitch-ui__1 {
+    background-image: url("/assets/images/glitch1-wb.gif");
+    background-size: cover;
+    background-blend-mode: luminosity;
+    background-position: center;
+}
+
+.glitch-ui__2 {
+    background-image: url("/assets/images/glitch2-wb.gif");
+    background-size: cover;
+    background-blend-mode: luminosity;
+    background-position: center;
+}
+
+.glitch-ui__3 {
+    background-image: url("/assets/images/glitch3-wb.gif");
+    background-size: cover;
+    background-blend-mode: luminosity;
+    background-position: center;
+}
+
+.glitch-ui__4 {
+    background-image: url("/assets/images/glitch4-wb.gif");
+    background-size: cover;
+    background-blend-mode: luminosity;
+    background-position: center;
+}

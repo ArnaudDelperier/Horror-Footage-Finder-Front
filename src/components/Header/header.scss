@@ -1,0 +1,84 @@
+@use '../../assets/styles/vars';
+
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        & {
+            @content;
+        }
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    &__leftmenu {
+        font-size: 1.4rem;
+
+        @include media-min(768px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__stby {
+        margin-bottom: .5rem;
+    }
+
+    &__accountmenu {
+        background: white;
+        width: 150px;
+
+        &:hover {
+            background: transparent;
+
+            &::before {
+                content: '>:';
+            }
+
+            a {
+                color: white;
+            }
+        }
+
+        &__animated {
+
+            a &:hover,
+            &:hover {
+                animation: flicker 0.1s steps(5, end);
+            }
+        }
+
+        a {
+            color: vars.$black-primary;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        @include media-min(768px) {
+            width: 100%;
+        }
+    }
+
+    &__account-link {
+        a {
+            word-break: break-word;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        display: flex;
+        align-items: flex-end;
+
+        @include media-min(768px) {
+            font-size: 3rem;
+        }
+    }
+
+    &__animations {
+        margin-top: .5rem;
+        font-size: 1rem;
+    }
+}

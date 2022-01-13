@@ -1,0 +1,18 @@
+.pageConfirm{
+    &__container{ 
+    padding: 1rem 2rem; 
+    background-color: #2039e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;}
+    &__text{
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    &__link{
+        font-size: 1.4rem;
+        color:#a60c0b;
+        text-decoration: underline;
+    }
+}

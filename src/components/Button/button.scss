@@ -1,0 +1,71 @@
+@use '../../assets/styles/vars';
+
+@mixin hover {
+    @media (hover:hover) {
+        & {
+            @content;
+        }
+    }
+}
+
+.button-ui {
+    width: fit-content;
+    font-size: 1.3rem;
+    background: white;
+    border: 3px solid transparent;
+    font-family: inherit;
+    box-shadow: 4px 4px white;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    a {
+        color: vars.$black-primary;
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    &__content {
+        padding: 1rem;
+    }
+
+    &__launch {
+        font-size: vars.$h2-font-size;
+    }
+
+    @include hover {
+        &:hover {
+            background: vars.$black-primary;
+            border: 3px solid white;
+            color: white;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    &__selected {
+        background: vars.$black-primary;
+        border: 3px solid white;
+        color: white;
+
+        a {
+            color: white;
+        }
+    }
+
+    &__animated {
+        animation: textShadow 1.6s infinite;
+
+        a {
+            animation: textShadow 1.6s infinite;
+        }
+
+        .button-ui__selected,
+        &:hover {
+            animation: flicker 0.1s steps(5, end);
+        }
+    }
+}

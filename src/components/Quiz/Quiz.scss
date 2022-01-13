@@ -1,0 +1,74 @@
+@use '../../assets/styles/vars';
+
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        & {
+            @content;
+        }
+    }
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+
+    @include media-min(768px) {
+        align-items: flex-end;
+        margin: 0 0 0 auto;
+    }
+
+    &__question {
+        padding: 0.5rem;
+        font-size: vars.$h2-font-size;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        @include media-min(768px) {
+            text-align: right;
+        }
+    }
+
+    &__answers {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        @include media-min(768px) {
+            justify-content: flex-end;
+        }
+
+        &-item {
+            margin: 0.1rem;
+        }
+    }
+
+    &__next-question {
+        align-self: center;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        @include media-min(768px) {
+            align-self: auto;
+        }
+    }
+
+    &__discover-results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        @include media-min(768px) {
+            align-items: flex-end;
+        }
+    }
+
+    &__help {
+        font-size: .9rem;
+        font-style: italic;
+        margin-top: 1rem;
+    }
+}

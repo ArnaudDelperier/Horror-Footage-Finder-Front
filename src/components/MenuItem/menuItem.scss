@@ -1,0 +1,31 @@
+
+
+.menu-item-ui {
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    width: fit-content;
+
+    a, &__simple {
+        display: inline-block;
+        color: #fff;
+        width: 300px;
+        padding: 0.5rem 0.25rem;
+    }
+
+    &:hover, &__simple:hover, &:hover &__simple {
+        background-color: #fff;
+        color: black;
+        animation: flicker 0.1s steps(15, end);
+
+        & a, &:hover a {
+            color: black;
+        }
+    }
+}
+

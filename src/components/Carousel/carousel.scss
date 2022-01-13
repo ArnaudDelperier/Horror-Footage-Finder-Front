@@ -1,0 +1,61 @@
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        &{ @content; }
+    }
+  }
+
+.carousel {
+    position: relative;
+
+    &__list {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__movie {
+        display: inline-block;
+        min-width: 100%;
+    }
+
+    &__arrow-back, &__arrow-next {
+        position: absolute;
+        top: 34%;
+        cursor: pointer;
+    }
+
+    &__arrow-next {
+        right: 1rem;
+    }
+
+    // .movie-info__tags {
+    //     min-height: 2.5rem;
+    // }
+
+    .movie-info__title {
+        min-height: 3rem;
+    }
+
+    .movie-info__poster {
+        min-height: 306px;
+    }
+}
+
+.carousel-watchlist {
+    .carousel__movie {
+        @include media-min(768px) {
+            min-width: 50%;
+            max-width: 50%;
+
+            .movie-info__tags {
+                min-height: 2.5rem;
+            }
+        }
+        @include media-min(1024px) {
+            min-width: 25%;
+            max-width: 25%;
+        }
+    }
+}

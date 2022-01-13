@@ -1,0 +1,54 @@
+@use './assets/styles/vars';
+
+@mixin media-min($_min-width) {
+  @media screen and (min-width: $_min-width) {
+    & {
+      @content;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+      animation: none;
+  }
+}
+
+@font-face {
+  font-family: 'VCRMONO';
+  src: local('VCRMONO'), url('./assets/fonts/VCRMONO.ttf') format('truetype');
+}
+
+html {
+  font-size: 12px;
+
+  @include media-min(425px) {
+    font-size: 14px;
+  }
+
+  @include media-min(1024px) {
+    font-size: 16px;
+  }
+}
+
+// body {
+//   margin: 0;
+//   font-family: 'VCRMONO', sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   background: #151718;
+//   background-image: url("/assets/images/static.gif");
+//   background-size: cover;
+//   background-blend-mode: overlay;
+//   background-position: center;
+// }
+
+.font-red {
+  color: vars.$red-primary;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

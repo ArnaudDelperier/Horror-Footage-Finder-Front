@@ -1,0 +1,107 @@
+@use '../../assets/styles/vars';
+
+.fade-effect {
+    position: absolute;
+    width: 640px;
+    height: 535px;
+    top: 0;
+    box-shadow: inset 0px 0px 40px 50px vars.$black-primary;
+}
+
+.tv-img {
+    transform: scale(0.5);
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%);
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50px;  
+}
+
+.tv-img > img {
+    transform: scale(0.7);
+    margin: -150px -325px -180px -325px;
+    
+}
+
+.scroll-container-credits {
+    position: absolute;
+    transform: translate(-50%);
+    top: 15%;
+    left: 50%;
+    border-radius: 5px;
+    width: 70%;
+    margin: 0 auto;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .scroll-credits-text {
+    height: 100%;
+    text-align: center;
+    
+    /* animation properties */
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    
+    -moz-animation: my-animation 8s linear infinite;
+    -webkit-animation: my-animation 8s linear infinite;
+    animation: my-animation 8s linear infinite;
+  }
+
+  .scroll-credits-title {
+      font-size: 1.4rem;
+      margin: 2.5rem 0 1.5rem 0;
+  }
+
+  .scroll-credits-img {
+      width: 200px;
+      margin: 0 auto;
+  }
+  
+  /* for Firefox */
+  @-moz-keyframes my-animation {
+    from { -moz-transform: translateY(100%); }
+    to { -moz-transform: translateY(-130%); }
+  }
+  
+  /* for Chrome */
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateY(100%); }
+    to { -webkit-transform: translateY(-130%); }
+  }
+  
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+    to {
+      -moz-transform: translateY(-130%);
+      -webkit-transform: translateY(-130%);
+      transform: translateY(-130%);
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .fade-effect {
+      position: absolute;
+      width: 600px;
+      height: 320px;
+      top: 0;
+      box-shadow: inset 0px 0px 40px 50px black
+    }
+  
+    .tv-img > img {
+      transform: scale(0.4);
+      margin: -250px -335px -290px -325px;
+    }
+  
+    .scroll-container-credits {
+      top: 20%;
+      height: 180px;
+    }
+
+  }

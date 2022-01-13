@@ -1,0 +1,7 @@
+.divider {
+    border: none;
+    &:before {
+        content: "---";
+    }
+    margin: 1rem;
+}

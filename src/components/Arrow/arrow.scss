@@ -1,0 +1,13 @@
+.arrow-ui {
+    position: relative;
+    bottom: 2px;
+    user-select: none;
+
+    &__rewind, &__forward {
+        letter-spacing: -0.4rem;
+    }
+
+    &__md {
+        font-size: 2rem;
+    }
+}

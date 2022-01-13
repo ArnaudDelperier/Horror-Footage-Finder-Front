@@ -1,0 +1,59 @@
+@use '../../assets/styles/vars';
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 40vh;
+        text-align: center;
+        background-color: vars.$blue-primary;
+        color: #fff;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    &__title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 3rem;
+    }
+
+    &__button__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &__button {
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 3px solid transparent;
+        background-color: #fff;
+        color: black;
+        box-shadow: 4px 4px 1px #fff;
+        padding: 0.6rem;
+        margin: 1rem 2rem;
+        transition: box-shadow 0.2s ease, color 0.1s ease, background 0.2s ease;
+
+        &:hover {
+            background: transparent;
+            border: 3px solid white;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@use '../../assets/styles/vars';
+
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        & {
+            @content;
+        }
+    }
+}
+
+.movie-info {
+    &__full {
+        @include media-min(768px) {
+            display: flex;
+            max-width: 850px;
+            margin: 2rem 0 0 auto;
+            text-align: left;
+
+            .movie-buttons {
+                justify-content: flex-start;
+            }
+
+            .MuiBox-root {
+                text-align: center;
+            }
+
+            .movie-info__poster {
+                width: auto;
+                &:hover {
+                    animation: flicker 0.4s steps(1, end);
+                }
+            }
+
+            .movie-info__left-side {
+                margin-right: 2rem;
+            }
+        }
+
+
+    }
+
+    &__poster {
+        position: relative;
+        z-index: 2;
+        border: 3px solid white;
+        margin-bottom: .5rem;
+        width: 200px;
+       
+    }
+
+    &__tags {
+        font-size: .8rem;
+        font-style: italic;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        white-space: break-spaces;
+        width: 70%;
+
+        @include media-min(768px) {
+            text-align: center;
+            width: 90%;
+        }
+    }
+
+    &__title {
+        font-size: vars.$h2-font-size;
+        margin-bottom: .25rem;
+        font-weight: bold;
+        white-space: break-spaces;
+
+
+    }
+
+    &__rating {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    &__collection {
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        font-size: 1.1rem;
+        line-height: 1.1rem;
+
+        @include media-min(768px) {
+            padding-right: 3rem;
+        }
+    }
+}

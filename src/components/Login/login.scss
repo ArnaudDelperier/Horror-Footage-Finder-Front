@@ -1,0 +1,55 @@
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        & {
+            @content;
+        }
+    }
+}
+
+.login__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 2rem;
+
+    @include media-min(768px) {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+.login__validate {
+    align-self: center;
+    @include media-min(768px) {
+        align-self: auto;
+    }
+}
+
+.login___title {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+
+    &__button {
+        width: 5em;
+        padding: 0.5em;
+        margin-bottom: 1rem;
+    }
+}
+
+.login__form__link {
+    margin-bottom: 1rem;
+}
+
+.login__to-register {
+    margin-bottom: 1rem;
+}
+
+.button__home {
+    margin-bottom: 1rem;
+}

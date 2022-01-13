@@ -1,0 +1,58 @@
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        &{ @content; }
+    }
+  }
+
+.homepage {
+    text-align: center;
+    @include media-min(768px) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__main {
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+
+        @include media-min(768px) {
+            margin:0;
+            text-align: right;
+            align-items: flex-end;
+        }
+        
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    &__subtitle {
+        margin-bottom: 1rem;
+    }
+
+    &__play-button {
+        margin-top: 1rem;
+    }
+
+    &__login {
+        margin-top: 5rem;
+    }
+}
+
+#home-carousel {
+    margin-bottom: 1rem;
+    @include media-min(768px) {
+        width: 30%;
+        min-width: 300px;
+    }
+}

@@ -1,0 +1,17 @@
+@use '../../assets/styles/vars';
+
+.movie-results {
+
+    &__title {
+        font-size: vars.$h2-font-size;
+        margin-bottom: 1rem;
+    }
+
+    &__textinfo, &__another-result {
+        margin-bottom: .5rem;
+    }
+
+    &__another-result {
+        font-size: vars.$h3-font-size;
+    }
+}

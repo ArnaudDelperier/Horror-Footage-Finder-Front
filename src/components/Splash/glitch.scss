@@ -1,0 +1,93 @@
+// From : https://codepen.io/lukemeyrick/pen/ayRgWO
+
+$font: "VCRMONO", monospace;
+
+.portfolio-experiment {
+	background: transparent;
+	color: red;
+    opacity: .85;
+
+	$steps: 80;
+	.experiment-title {
+		outline: none;
+		text-align: center;
+		font-family: $font;
+        text-transform: uppercase;
+		
+		&,
+		* {
+			animation: cray 6s infinite steps($steps);
+			display: inline-block;
+		}
+	}
+
+	@keyframes cray {
+		@for $i from 1 to $steps {
+			$per: 100% / $steps * $i;
+			$weight: (
+				100,
+				200,
+				300,
+				400,
+				500,
+				600,
+				700
+			);
+			$style: (
+				normal,
+				italic,
+				normal,
+				normal
+			);
+			$decor: (
+				none,
+				none,
+				line-through,
+				underline,
+				none,
+				none,
+				none
+			);
+			$trans: (
+				uppercase,
+				uppercase,
+				uppercase,
+				lowercase,
+				capitalize,
+				uppercase,
+				uppercase,
+				uppercase,
+				uppercase,
+				uppercase,
+				uppercase
+			);
+			$opacity: (
+				1,
+				1,
+				1,
+				0,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1
+			);
+
+			$arrayW: random(7);
+			$arrayS: random(4);
+			$arrayD: random(7);
+			$arrayT: random(11);
+			$arrayO: random(11);
+
+			#{$per} {
+				font-weight: nth($weight, $arrayW);
+				font-style: nth($style, $arrayS);
+				text-decoration: nth($decor, $arrayD);
+				text-transform: nth($trans, $arrayT);
+				opacity: nth($opacity, $arrayO)
+			}
+		}
+	}
+}

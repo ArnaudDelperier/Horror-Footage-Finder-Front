@@ -1,0 +1,36 @@
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        &{ @content; }
+    }
+  }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-min(320px) {
+        flex-direction: column;
+    }
+
+    @include media-min(768px) {
+        flex-direction: row;
+    }
+
+    &__slp {
+        display: flex;
+        font-size: 1.5rem;
+
+        @include media-min(320px) {
+            margin-bottom: 1rem;
+        }
+    
+        @include media-min(768px) {
+            margin:0;
+        }
+    }
+
+    &__link:hover {
+        color: #999;
+    }
+}

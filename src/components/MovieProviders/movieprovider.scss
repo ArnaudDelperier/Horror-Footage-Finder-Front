@@ -1,0 +1,15 @@
+@use '../../assets/styles/vars';
+
+.movie-providers {
+    display: flex;
+
+    &__part {
+        width: 50%
+    };
+
+    &__title {
+        font-size: vars.$h3-font-size;
+        margin-bottom: 1rem;
+        margin: auto;
+    }
+}

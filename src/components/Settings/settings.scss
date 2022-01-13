@@ -1,0 +1,64 @@
+.settings{
+
+    &__title {
+        font-size: 2rem    
+    }
+
+    &__item{
+        display: flex;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    &__button{
+        cursor: pointer;
+        font-family: inherit;
+        text-transform: uppercase;
+        border: none;
+        margin: 0 0.2rem 0 0.2rem;
+        animation: flicker 0.1s steps (5,end);
+    }
+
+    &__input {
+        font-family: inherit;
+        border: none;
+        padding: 0.1rem;
+        margin-right: 0.2rem;
+    }
+
+    &__input-holder {
+        padding-left: .5rem;
+    }
+
+    &__shared-link{
+        margin: 0.5rem 0 0.5rem 0;
+        cursor: pointer;
+    }
+
+    &__info{
+        color: red;
+        margin-top: 1rem;
+    }
+
+    &__section__separator {
+        margin-top: 1.5rem;
+    }
+}
+
+.security-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    min-width: 300px;
+
+    & .settings__button {
+        margin: 0.4rem 1rem 0.4rem 0rem;
+    }
+
+    & .settings__input {
+        margin: 0.2rem 0 0.2rem 0;
+    }
+}
+
+.security-container:nth-child(6) {
+    color: red;
+}

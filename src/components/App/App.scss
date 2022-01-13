@@ -1,0 +1,103 @@
+@use '../../assets/styles/vars';
+
+@mixin media-min($_min-width) {
+  @media screen and (min-width: $_min-width) {
+    & {
+      @content;
+    }
+  }
+}
+
+// Animation en keyframes d'un effet de flicker
+@keyframes flicker {
+  0% {
+      background-color: #fff;
+  }
+  50% {
+      background-color: transparent;
+  }
+  100% {
+      background-color: #fff;
+  }
+}
+
+.app-wrapper {
+  margin: 0;
+  font-family: 'VCRMONO', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #151718;
+}
+
+.app-wrapper__animated {
+  background-image: url("/assets/images/static-wb.gif");
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-position: center;
+  animation: textShadow 1.6s infinite;
+}
+
+.app {
+  display: flex;
+  text-transform: uppercase;
+  min-height: 100vh;
+  // max-height: 100vh;
+  padding-bottom: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: white;
+  max-width: 1400px;
+  margin: auto;
+
+  @include media-min(768px) {
+    padding: 1rem 3rem;
+  }
+
+  &__content {
+    margin: auto 0;
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.menu-holder {
+  background-color: vars.$blue-primary;
+  width: fit-content;
+  padding: 2rem 3rem;
+  margin: auto;
+  box-sizing: border-box;
+  max-width: 300px;
+
+  @include media-min(320px) {
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  @include media-min(520px) {
+    width: auto;
+    max-width: 400px;
+    margin: 0;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: vars.$black-primary;
+  /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  /* color of the scroll thumb */
+}

@@ -1,0 +1,23 @@
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+        & {
+            @content;
+        }
+    }
+}
+
+.movie-buttons {
+    @include media-min(768px) {
+        .button-ui__content, .button-ui__content a {
+            font-size: 1.1rem;
+        }
+    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+
+    &__other-results {
+        width: 100%;
+    }
+}

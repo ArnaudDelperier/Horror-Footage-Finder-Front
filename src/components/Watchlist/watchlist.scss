@@ -1,0 +1,17 @@
+@use '../../assets/styles/vars';
+
+.watchlist__text{
+    background: vars.$blue-primary;
+    padding: 2rem 3rem;
+    max-width: 300px;
+
+    &__link{
+        color: vars.$red-primary;;
+    }
+}
+
+.watchlist-page {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}

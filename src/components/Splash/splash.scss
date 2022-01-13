@@ -1,0 +1,48 @@
+@use '../../assets/styles/vars';
+
+.splash {
+    height: calc(100vh - 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+
+    &__launch-app {
+        background: transparent;
+        color: vars.$red-primary;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: inherit;
+        
+        a {
+            color: vars.$red_primary;
+        }
+    }
+
+    &__options {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        cursor: pointer;
+    }
+
+    &__fade-out {
+        animation: fadeOut 1.25s ease-in-out forwards;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        cursor: initial;
+    }
+}

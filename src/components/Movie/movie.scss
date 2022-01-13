@@ -1,0 +1,17 @@
+@mixin media-min($_min-width) {
+    @media screen and (min-width: $_min-width) {
+      & {
+        @content;
+      }
+    }
+  }
+
+.single-movie {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+    @include media-min(768px) {
+        margin-top: 0;
+      }
+}
